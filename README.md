@@ -1,5 +1,5 @@
-# Emotional-analysis-of-online-novels
-《由“虐”到“甜”：数字人文视角下的女频网文情感转向》2021北京大学“挑战杯”
+# [由“虐”到“甜”：数字人文视角下的女频网文情感转向](https://github.com/007DXR/Emotional-analysis-of-online-novels/blob/main/由“虐”到“甜”：数字人文视角下的女频网文情感转向.pdf)
+## 北京大学第三十届“挑战杯”跨学科学生课外学术科技作品竞赛
 
 # 摘要：
 本文以数字人文的视角切入，结合传统文学研究当中的社会历史分析、脉
@@ -12,18 +12,37 @@
 # 关键词：
 数字人文 网络文学 情感弧 甜文 虐文
 
-# 作者信息：
-陈晓彤 中国语言文学系
+# 网文数据来源
+番茄小说APP
+晋江小说城
 
-陈绚 中国语言文学系
+## 移动端APP爬取文本及评论方法
+### 1、uiautomator2
+uiautomator2是一个自动化测试开源工具，仅支持Android平台的原生应用测试。python-uiautomator2封装了谷歌自带的uiautomator测试框架，提供便利的python接口，用它可以很便捷的编写python脚本来实现app的自动化测试。
 
-董欣然 信息科学技术学院
+python端：运行脚本，往移动端发送HTTP请求
+移动端：安装atx-agent，然后atx-agent启动uiautomator2服务进行监听，并识别python脚本，转换为uiautomator2的代码。
+移动设备通过WIFI(同一网段)或USB接收到PC上发来的HTTP请求，执行制定的操作。
 
-马咫昕 中国语言文学系
+### 2、前提环境
+Python
 
-辛世计 信息科学技术学院
+Android SDK
 
-周启红 对外汉语教育学院
+uiautomator2：`pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --pre -U uiautomator2`
 
-# 指导教师：
-邵燕君 马郓
+设备上安装atx-agent：`python -m uiautomator2 init`
+
+### 3、uiautomator2连接移动设备的三种方法
+参考[link](https://www.cnblogs.com/qingchengzi/articles/14642737.html)
+
+`import uiautomator2 as u2`
+
+### U2控制移动设备
+
+ 连接手机的USB进行连接(安卓模拟器和真机都可以）必须开启USB调试模式
+ CSQBL5000123456为手机序列号，`adb devices`查看
+`d = u2.connect_usb("CSQBL5000123456")`
+`print(d.info)`
+
+
