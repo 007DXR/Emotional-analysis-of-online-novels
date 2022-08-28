@@ -17,6 +17,8 @@
 晋江小说城
 
 ## 移动端APP爬取文本及评论方法
+脚本详见 [UIautomatic.py](https://github.com/007DXR/Emotional-analysis-of-online-novels/blob/main/UIautomatic.py)
+
 ### 1、uiautomator2
 uiautomator2是一个自动化测试开源工具，仅支持Android平台的原生应用测试。python-uiautomator2封装了谷歌自带的uiautomator测试框架，提供便利的python接口，用它可以很便捷的编写python脚本来实现app的自动化测试。
 
@@ -33,7 +35,7 @@ uiautomator2：`pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --pre -U
 
 设备上安装atx-agent：`python -m uiautomator2 init`
 
-### 3、uiautomator2连接移动设备的三种方法
+### 3、uiautomator2连接移动设备
 参考[link](https://www.cnblogs.com/qingchengzi/articles/14642737.html)
 
 `import uiautomator2 as u2`
@@ -41,8 +43,11 @@ uiautomator2：`pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --pre -U
 ### U2控制移动设备
 
  连接手机的USB进行连接(安卓模拟器和真机都可以）必须开启USB调试模式
- CSQBL5000123456为手机序列号，`adb devices`查看
-`d = u2.connect_usb("CSQBL5000123456")`
-`print(d.info)`
+ 
+ 182QGFZD222DZ为手机序列号，`adb devices`查看
+```
+d = u2.connect_usb("CSQBL5000123456")
+print(d.info)
+```
 
 
